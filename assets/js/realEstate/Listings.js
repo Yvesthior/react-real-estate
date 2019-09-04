@@ -11,13 +11,13 @@ class Listings extends Component {
 	async test() {}
 	render() {
 		return (
-			<section className="listings">
+			<section id="listings">
 				<section className="search-area">
 					<input type="text" name="search" />
 				</section>
 
 				<section className="sortby-area">
-					<div>390 results found</div>
+					<div className="results">390 results found</div>
 					<div className="sort-options">
 						<select name="sortby" className="sortby">
 							<option value="price-asc">Highest Price</option>
@@ -47,7 +47,7 @@ class Listings extends Component {
 										<span>1000 ft&sup2;</span>
 									</div>
 									<div className="bedrooms">
-										<i className="fas fa-bed"></i>
+										<i className="fa fa-bed"></i>
 										<span> 7 Bedrooms</span>
 									</div>
 								</div>
