@@ -25,8 +25,8 @@ class Listings extends Component {
 						</select>
 
 						<div className="view">
-							<i className="fa fa-list-ul"></i>
-							<i className="fa fa-th"></i>
+							<i className="fas fa-list-ul"></i>
+							<i className="fas fa-th"></i>
 						</div>
 					</div>
 				</section>
@@ -43,9 +43,9 @@ class Listings extends Component {
 								</div>
 								<div className="listing-details">
 									<div className="floor-space">
-										<i class="fa fa-square"></i>1000 ft&sup2;
+										<i className="far fa-square"></i>1000 ft&sup2;
 									</div>
-									<i class="fa fa-bed"></i>
+									<i clasNames="fas fa-bed"></i>
 								</div>
 							</div>
 						</div>
