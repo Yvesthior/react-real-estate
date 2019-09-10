@@ -34,22 +34,27 @@ class Listings extends Component {
 				<section className="listing-results">
 					<div className="listing">
 						<div className="listing-img">
-							<span>Address</span>
+							<span className="address">Address</span>
 							<div className="details">
-								<div className="user-img"></div>
-								<div className="user-details">
-									<span className="user-name">Nina Smith</span>
-									<span className="post-date">05/05/2019</span>
+								<div className="col-md-3">
+									<div className="user-img"></div>
 								</div>
-								<div className="listing-details">
-									<div className="floor-space">
-										<i className="far fa-square"></i>
-										<span>1000 ft&sup2;</span>
+								<div className="col-md-9">
+									<div className="user-details">
+										<span className="user-name">Nina Smith</span>
+										<span className="post-date">05/05/2019</span>
 									</div>
-									<div className="bedrooms">
-										<i className="fa fa-bed"></i>
-										<span> 7 Bedrooms</span>
+									<div className="listing-details">
+										<div className="floor-space">
+											<i className="far fa-square"></i>
+											<span>1000 ft&sup2;</span>
+										</div>
+										<div className="bedrooms">
+											<i className="fa fa-bed"></i>
+											<span> 7 Bedrooms</span>
+										</div>
 									</div>
+									<div className="view-btn">View Listing</div>
 								</div>
 							</div>
 						</div>
