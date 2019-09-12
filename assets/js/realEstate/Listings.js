@@ -7,6 +7,55 @@ class Listings extends Component {
 			name: 'Joe'
 		};
 	}
+
+	loopListings() {
+		let { listingsData } = this.props;
+		return listingsData.map((data, index) => {
+			return (
+				<div className="col-md-3" key={index}>
+					<div className="listing">
+						<div
+							className="listing-img"
+							style={{
+								background: `url('${data.image}') no-repeat center center`
+							}}
+						>
+							<span className="address">{data.address}</span>
+							<div className="details">
+								<div className="col-md-3">
+									<div className="user-img"></div>
+								</div>
+								<div className="col-md-9">
+									<div className="user-details">
+										<span className="user-name">Nina Smith</span>
+										<span className="post-date">05/05/2019</span>
+									</div>
+									<div className="listing-details">
+										<div className="floor-space">
+											<i className="far fa-square"></i>
+											<span>{data.floorSpace} ft&sup2;</span>
+										</div>
+										<div className="bedrooms">
+											<i className="fa fa-bed"></i>
+											<span>{data.rooms} Bedrooms</span>
+										</div>
+									</div>
+									<div className="view-btn">View Listing</div>
+								</div>
+							</div>
+						</div>
+						<div className="bottom-info">
+							<span className="price">${data.price}</span>
+							<span className="location">
+								<i className="fa fa-map-marker" aria-hidden="true"></i>
+								{data.city}, {data.state}
+							</span>
+						</div>
+					</div>
+				</div>
+			);
+		});
+	}
 	clickedBtn = () => {};
 	async test() {}
 	render() {
@@ -31,47 +80,12 @@ class Listings extends Component {
 					</div>
 				</section>
 
-				<section className="listing-results">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="address">Address</span>
-							<div className="details">
-								<div className="col-md-3">
-									<div className="user-img"></div>
-								</div>
-								<div className="col-md-9">
-									<div className="user-details">
-										<span className="user-name">Nina Smith</span>
-										<span className="post-date">05/05/2019</span>
-									</div>
-									<div className="listing-details">
-										<div className="floor-space">
-											<i className="far fa-square"></i>
-											<span>1000 ft&sup2;</span>
-										</div>
-										<div className="bedrooms">
-											<i className="fa fa-bed"></i>
-											<span> 7 Bedrooms</span>
-										</div>
-									</div>
-									<div className="view-btn">View Listing</div>
-								</div>
-							</div>
-						</div>
-						<div className="bottom-info">
-							<span>$1000 / month </span>
-							<span>
-								<i className="fa fa-map-marker" aria-hidden="true"></i>
-								Ridgewood, NY
-							</span>
-						</div>
-					</div>
-				</section>
+				<section className="listing-results">{this.loopListings()}</section>
 
 				<section className="pagination">
-					<ul className="pagination-nums">
+					<ul className="pages">
 						<li>Prev</li>
-						<li>1</li>
+						<li className="active">1</li>
 						<li>2</li>
 						<li>3</li>
 						<li>4</li>

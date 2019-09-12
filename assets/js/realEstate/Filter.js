@@ -1,67 +1,121 @@
 import React, { Component } from 'react';
 
 class Filter extends Component {
-	constructor() {
-		super();
-		this.state = {
-			name: 'Joe'
-		};
-	}
-	clickedBtn = () => {};
-	async test() {}
 	render() {
 		return (
 			<section id="filter">
 				<div className="inside">
 					<h4>Filter</h4>
-					<select name="neighbourhood" className="filters neighbourhood">
-						<option>Ridgewood</option>
+					<select
+						name="neighbourhood"
+						className="filters neighbourhood"
+						onChange={this.props.onchange}
+					>
+						<option>Neighbourhood</option>
+						<option value="Ridgewood">Ridgewood</option>
+						<option value="Los Angeles">Los Angeles</option>
+						<option value="Santa Fe">Santa Fe</option>
+						<option value="Houston">Houston</option>
+						<option value="Pomona">Pomona</option>
+						<option value="Cincinnati">Cincinnati</option>
 					</select>
 
-					<select name="housetype" className="filters housetype">
-						<option>Ranch</option>
+					<select
+						name="housetype"
+						className="filters housetype"
+						onChange={this.props.onchange}
+					>
+						<option value="">House Type</option>
+						<option value="ranch">Ranch</option>
+						<option value="house">House</option>
+						<option value="appartment">Appartment</option>
+						<option value="studio">Studio</option>
 					</select>
 
-					<select name="bedrooms" className="filters bedrooms">
-						<option>2 BR</option>
+					<select
+						name="bedrooms"
+						className="filters bedrooms"
+						onChange={this.props.onchange}
+					>
+						<option>Bedrooms</option>
+						<option value="1">1 BR</option>
+						<option value="2">2 BR</option>
+						<option value="3">3 BR</option>
+						<option value="4">4 BR</option>
 					</select>
 
 					<div className="filters price">
 						<span className="title">Price</span>
-						<input type="text" name="min-price" className="min-price" />
-						<input type="text" name="max-price" className="max-price" />
+						<input
+							type="text"
+							name="min_price"
+							value={this.props.globalState.min_price}
+							className="min-price"
+							onChange={this.props.onchange}
+						/>
+						<input
+							type="text"
+							name="max_price"
+							value={this.props.globalState.max_price}
+							className="max-price"
+							onChange={this.props.onchange}
+						/>
 					</div>
 					<div className="filters floor-space">
 						<span className="title">Floor Space</span>
 						<input
 							type="text"
-							name="min-floor-space"
+							name="min_floor_space"
+							value={this.props.globalState.min_floor_space}
 							className="min-floor-space"
+							onChange={this.props.onchange}
 						/>
 						<input
 							type="text"
-							name="max-floor-space"
+							name="max_floor_space"
+							value={this.props.globalState.max_floor_space}
 							className="max-floor-space"
+							onChange={this.props.onchange}
 						/>
 					</div>
 
 					<div className="filters extras">
 						<span className="title">Extras</span>
-						<label for="extras">
+						<label htmlFor="elevator">
 							<span>Elevators</span>
-							<input type="checkbox" value="elevator" name="extras" />
+							<input
+								type="checkbox"
+								value="elevator"
+								name="elevator"
+								onChange={this.props.onchange}
+							/>
 						</label>
-						<label for="extras">
+						<label htmlFor="exswimming_pooltras">
 							<span>Swimming Pool</span>
-							<input type="checkbox" value="swimming-pool" name="extras" />
+							<input
+								type="checkbox"
+								value="swimming_pool"
+								name="swimming_pool"
+								onChange={this.props.onchange}
+							/>
 						</label>
-						<label for="extras">
+						<label htmlFor="finished_basement">
 							<span>Finished Basement</span>
-							<input type="checkbox" value="finished-basement" name="extras" />
+							<input
+								type="checkbox"
+								value="finished_basement"
+								name="finished_basement"
+								onChange={this.props.onchange}
+							/>
 						</label>
-						<label for="extras">
+						<label htmlFor="gym">
 							<span>Gym</span>
-							<input type="checkbox" value="gym" name="extras" />
+							<input
+								type="checkbox"
+								value="gym"
+								name="gym"
+								onChange={this.props.onchange}
+							/>
 						</label>
 					</div>
 				</div>
