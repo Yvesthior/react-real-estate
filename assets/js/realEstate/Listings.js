@@ -10,6 +10,8 @@ class Listings extends Component {
 
 	loopListings() {
 		let { listingsData } = this.props;
+		if (listingsData == undefined || listingsData.length == 0)
+			return 'Sorry, No results for your research';
 		return listingsData.map((data, index) => {
 			return (
 				<div className="col-md-3" key={index}>

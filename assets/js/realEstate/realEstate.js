@@ -18,7 +18,8 @@ class App extends Component {
 			gym: false,
 			finished_basement: false,
 			swimming_pool: false,
-			elevator: false
+			elevator: false,
+			filteredData: listingsData
 		};
 	}
 
@@ -32,8 +33,26 @@ class App extends Component {
 			{
 				[name]: value
 			},
-			() => console.log(this.state)
+			() => {
+				this.filteredData();
+				console.log(this.state);
+			}
 		);
+	};
+
+	filteredData = () => {
+		let newData = this.state.listingsData.filter(item => {
+			return (
+				item.price >= this.state.min_price &&
+				item.price <= this.state.max_price &&
+				item.floorSpace >= this.state.min_floor_space &&
+				item.floorSpace <= this.state.max_floor_space
+			);
+		});
+
+		this.setState({
+			filteredData: newData
+		});
 	};
 
 	render() {
@@ -42,7 +61,7 @@ class App extends Component {
 				<Header />
 				<section id="content-area">
 					<Filter onchange={this.change} globalState={this.state} />
-					<Listings listingsData={this.state.listingsData} />
+					<Listings listingsData={this.state.filteredData} />
 				</section>
 			</div>
 		);
