@@ -64,7 +64,11 @@ class Listings extends Component {
 		return (
 			<section id="listings">
 				<section className="search-area">
-					<input type="text" name="search" />
+					<input
+						type="text"
+						name="search"
+						placeholder="Enter Here Your Research"
+					/>
 				</section>
 
 				<section className="sortby-area">

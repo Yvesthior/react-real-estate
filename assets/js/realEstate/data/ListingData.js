@@ -7,7 +7,7 @@ var listingsData = [
 		price: 220000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://creativeoverflow.net/wp-content/uploads/2018/11/modern-homes.jpg'
 	},
@@ -19,7 +19,7 @@ var listingsData = [
 		price: 22220000,
 		floorSpace: 1000,
 		extra: ['elevator', 'gym', 'swimming_pool'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4206-28/the-kelvin-apartments-exterior.jpg'
 	},
@@ -31,7 +31,7 @@ var listingsData = [
 		price: 1220000,
 		floorSpace: 3000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'House',
 		image:
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSt3Kp8cUnn5UpkRcd-30BxH-r20JGoE1UVfMV5VIwrEgDc5x'
 	},
@@ -43,7 +43,7 @@ var listingsData = [
 		price: 850000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://i.pinimg.com/originals/10/15/1f/10151f97ff80025113b3de92bd382b2f.jpg'
 	},
@@ -55,7 +55,7 @@ var listingsData = [
 		price: 720000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'http://d2kcmk0r62r1qk.cloudfront.net/imageSponsors/xlarge/2017_03_01_10_23_27_thelofthouse_rendering.jpg'
 	},
@@ -67,7 +67,7 @@ var listingsData = [
 		price: 210000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://images.thestar.com/Dgq93pGTGO8ujb3i-iqq_m6hNzU=/1200x976/smart/filters:cb(2700061000)/https://www.thestar.com/content/dam/thestar/news/gta/2017/08/29/midrise-housing-has-bright-future-in-toronto-whether-residents-like-it-or-not-hume/mid-rise-condos4.jpg'
 	},
@@ -79,7 +79,7 @@ var listingsData = [
 		price: 250000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://creativeoverflow.net/wp-content/uploads/2018/11/modern-homes.jpg'
 	},
@@ -91,7 +91,7 @@ var listingsData = [
 		price: 150000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Appartment',
 		image:
 			'https://inhabitat.com/wp-content/blogs.dir/1/files/2016/07/Eco-Green-apartment-homes-in-Los-Angeles-by-Hanover-Company-1-1.jpg'
 	},
@@ -103,7 +103,7 @@ var listingsData = [
 		price: 29000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Ranch',
 		image:
 			'https://1147794.v1.pressablecdn.com/wp-content/uploads/2017/11/360-5th-Street_2.jpg'
 	},
@@ -115,7 +115,7 @@ var listingsData = [
 		price: 350000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'House',
 		image:
 			'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/640x480/56587_11491_001.jpg'
 	},
@@ -127,7 +127,7 @@ var listingsData = [
 		price: 210000,
 		floorSpace: 2000,
 		extra: ['elevator', 'gym'],
-		homeType: 'Appartement',
+		homeType: 'Studio',
 		image:
 			'https://odis.homeaway.com/odis/listing/c7b5aa0b-0ec2-49e5-91e7-89d0d7516518.c10.jpg'
 	}
