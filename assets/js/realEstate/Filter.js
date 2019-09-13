@@ -6,12 +6,13 @@ class Filter extends Component {
 			<section id="filter">
 				<div className="inside">
 					<h4>Filter</h4>
+					<label htmlFor="city">City</label>
 					<select
-						name="neighbourhood"
-						className="filters neighbourhood"
+						name="city"
+						className="filters city"
 						onChange={this.props.onchange}
 					>
-						<option>Neighbourhood</option>
+						<option value="All">All</option>
 						<option value="Ridgewood">Ridgewood</option>
 						<option value="Los Angeles">Los Angeles</option>
 						<option value="Santa Fe">Santa Fe</option>
@@ -20,28 +21,31 @@ class Filter extends Component {
 						<option value="Cincinnati">Cincinnati</option>
 					</select>
 
+					<label htmlFor="homeType">Home Type</label>
 					<select
-						name="housetype"
-						className="filters housetype"
+						name="homeType"
+						className="filters homeType"
 						onChange={this.props.onchange}
 					>
-						<option value="">House Type</option>
-						<option value="ranch">Ranch</option>
-						<option value="house">House</option>
-						<option value="appartment">Appartment</option>
-						<option value="studio">Studio</option>
+						<option value="All">All Homes</option>
+						<option value="Ranch">Ranch</option>
+						<option value="House">House</option>
+						<option value="Appartment">Appartment</option>
+						<option value="Studio">Studio</option>
 					</select>
 
+					<label htmlFor="bedrooms">Bedrooms</label>
 					<select
 						name="bedrooms"
 						className="filters bedrooms"
 						onChange={this.props.onchange}
 					>
 						<option>Bedrooms</option>
-						<option value="1">1 BR</option>
-						<option value="2">2 BR</option>
-						<option value="3">3 BR</option>
-						<option value="4">4 BR</option>
+						<option value="0">0+ BR</option>
+						<option value="1">1+ BR</option>
+						<option value="2">2+ BR</option>
+						<option value="3">3+ BR</option>
+						<option value="4">4+ BR</option>
 					</select>
 
 					<div className="filters price">
