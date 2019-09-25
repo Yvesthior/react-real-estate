@@ -1,6 +1,36 @@
 import React, { Component } from 'react';
 
 class Filter extends Component {
+	UNSAFE_componentWillMount() {
+		this.props.populateAction();
+	}
+
+	cities() {
+		let { cities } = this.props.globalState.populateFormsData;
+		if (cities != undefined) {
+			return cities.map(item => {
+				return (
+					<option value={item} key={item}>
+						{item}
+					</option>
+				);
+			});
+		}
+	}
+
+	homeTypes() {
+		let { homeTypes } = this.props.globalState.populateFormsData;
+		if (homeTypes != undefined) {
+			return homeTypes.map(item => {
+				return (
+					<option value={item} key={item}>
+						{item}
+					</option>
+				);
+			});
+		}
+	}
+
 	render() {
 		return (
 			<section id="filter">
@@ -13,12 +43,7 @@ class Filter extends Component {
 						onChange={this.props.onchange}
 					>
 						<option value="All">All</option>
-						<option value="Ridgewood">Ridgewood</option>
-						<option value="Los Angeles">Los Angeles</option>
-						<option value="Santa Fe">Santa Fe</option>
-						<option value="Houston">Houston</option>
-						<option value="Pomona">Pomona</option>
-						<option value="Cincinnati">Cincinnati</option>
+						{this.cities()}
 					</select>
 
 					<label htmlFor="homeType">Home Type</label>
@@ -28,10 +53,7 @@ class Filter extends Component {
 						onChange={this.props.onchange}
 					>
 						<option value="All">All Homes</option>
-						<option value="Ranch">Ranch</option>
-						<option value="House">House</option>
-						<option value="Appartment">Appartment</option>
-						<option value="Studio">Studio</option>
+						{this.homeTypes()}
 					</select>
 
 					<label htmlFor="bedrooms">Bedrooms</label>

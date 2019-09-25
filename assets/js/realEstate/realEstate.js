@@ -22,9 +22,52 @@ class App extends Component {
 			finished_basement: false,
 			swimming_pool: false,
 			elevator: false,
-			filteredData: listingsData
+			filteredData: listingsData,
+			populateFormsData: [],
+			sortby: 'price-dsc',
+			view: 'box',
+			search: ''
 		};
 	}
+	UNSAFE_componentWillMount() {
+		let listingsData = this.state.listingsData.sort((a, b) => {
+			return a.price - b.price;
+		});
+		this.setState({
+			listingsData
+		});
+	}
+
+	populateForms = () => {
+		//City
+		let cities = this.state.listingsData.map(item => {
+			return item.city;
+		});
+		cities = new Set(cities);
+		cities = [...cities].sort();
+
+		//HomeType
+		let homeTypes = this.state.listingsData.map(item => {
+			return item.homeType;
+		});
+		homeTypes = new Set(homeTypes);
+		homeTypes = [...homeTypes].sort();
+
+		//Bedrooms
+		let bedrooms = this.state.listingsData.map(item => {
+			return item.rooms;
+		});
+		bedrooms = new Set(bedrooms);
+		bedrooms = [...bedrooms];
+
+		this.setState({
+			populateFormsData: {
+				homeTypes,
+				bedrooms,
+				cities
+			}
+		});
+	};
 
 	change = event => {
 		let name = event.target.name;
@@ -65,8 +108,59 @@ class App extends Component {
 			});
 		}
 
+		if (this.state.sortby == 'price-asc') {
+			newData = newData.sort((a, b) => {
+				return a.price - b.price;
+			});
+		}
+
+		if (this.state.sortby == 'price-dsc') {
+			newData = newData.sort((a, b) => {
+				return b.price - a.price;
+			});
+		}
+		if (this.state.search != '') {
+			let { search } = this.state;
+			newData = newData.filter(item => {
+				let city = item.city.toLowerCase();
+				let searchText = this.state.search.toLowerCase();
+				let n = city.match(searchText);
+
+				if (n != null) return true;
+			});
+		}
+		if (this.state.elevator == true) {
+			newData = newData.filter(item => {
+				return item.extra.includes('elevator');
+			});
+		}
+
+		if (this.state.gym == true) {
+			newData = newData.filter(item => {
+				return item.extra.includes('gym');
+			});
+		}
+
+		if (this.state.finished_basement == true) {
+			newData = newData.filter(item => {
+				return item.extra.includes('elevafinished_basementtor');
+			});
+		}
+
+		if (this.state.swimming_pool == true) {
+			newData = newData.filter(item => {
+				return item.extra.includes('swimming_pool');
+			});
+		}
+
 		this.setState({
 			filteredData: newData
+		});
+	};
+
+	changeView = viewName => {
+		this.setState({
+			view: viewName
 		});
 	};
 
@@ -75,8 +169,17 @@ class App extends Component {
 			<div>
 				<Header />
 				<section id="content-area">
-					<Filter onchange={this.change} globalState={this.state} />
-					<Listings listingsData={this.state.filteredData} />
+					<Filter
+						onchange={this.change}
+						globalState={this.state}
+						populateAction={this.populateForms}
+					/>
+					<Listings
+						listingsData={this.state.filteredData}
+						globalState={this.state}
+						changeView={this.changeView}
+						change={this.change}
+					/>
 				</section>
 			</div>
 		);
